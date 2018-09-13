@@ -1,0 +1,42 @@
+{
+    "settings": {
+        "react": {
+            "version": "15.0"
+        }
+    },
+    "parser": "babel-eslint",
+    "env": {
+        "es6": true,
+        "node": true,
+        "commonjs": true,
+        "browser": true
+    },
+    "extends": [
+        "airbnb-base",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
+    "rules": {
+        "no-unused-vars": 0,
+        "import/no-unresolved": "off",
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "semi": "error",
+        "no-console": "off"
+    }
+}
