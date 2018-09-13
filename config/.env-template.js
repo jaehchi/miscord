@@ -10,6 +10,9 @@ const envBuild = {
     'AWS_PASSWORD=',
     'AWS_PORT=',
   ],
+  'client': [
+    'CLIENT_ENV=development'
+  ]
 };
 
 module.exports = envBuild;
