@@ -1,5 +1,5 @@
 import { createServer } from 'http';
-import { success } from './config/log';
+import { success } from './lib/logs';
 
 import App from './config/express';
 
