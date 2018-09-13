@@ -26,7 +26,7 @@ These commands will help you do this:
 # Creates a branch and takes you there
 git checkout -b <branch name>
 ```
-
+---
 ### 2. Make commmits on your feature branch.
 Prefix each commit like so:
 - [bug] - fixing error handling for whatever...
@@ -40,7 +40,7 @@ Prefix each commit like so:
 # Shows branch you're currently on
 git branch -v
 ```
-
+---
 ### 3. Minimizing Rebase Hell
 
 Once you are done making changes, you can begin the process of getting your code merged into the main repo. 
@@ -58,7 +58,7 @@ git branch -v
 git checkout <branch name>
 
 # This command rebase your feature branch
-git pull --rebase upstream master
+git pull upstream master
 ```
 ---
 #### Step 2: Handle merge conflicts if there are any and re commit your changes.
@@ -85,11 +85,17 @@ Make a clear pull request from your fork and branch to the upstream master branc
 ---
 ### 5. Making sure your master branch ( on your forked repo ) is updated.
 
-Once the pull request is accepted, Make sure your master branch on your forked repo is aligned with the upstream master,
+Once the pull request is accepted:
 
 ```bash
+# Takes you to master branch on your forked repo
 git checkout master
-git pull --rebase upstream master
+
+# Since you have no changes on your master branch, there should be no merge conflicts
+git pull origin master
+
+# Deleting non merged feature branch
+git branch -D <branch name>
 ```
 
 
