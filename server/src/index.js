@@ -2,9 +2,10 @@ import { createServer } from 'http';
 import { success } from './lib/logs';
 
 import App from './config/express';
+import db from './config/database';
+
 
 const app = App.express;
-
 
 const server = createServer(app);
 const PORT = process.env.PORT || 3000;
