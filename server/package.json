@@ -1,5 +1,5 @@
 {
-  "name": "rest-server",
+  "name": "server",
   "version": "1.0.0",
   "engines": {
     "node": ">=6.0.0"
@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon bin/entry.js",
+    "test": "jest --verbose --forceExit",
     "eslint": "./node_modules/.bin/eslint src/**; exit 0",
     "db:setup": "babel-node src/config/database/setup.js"
   },
@@ -31,6 +32,7 @@
     "joi": "^13.6.0",
     "nodemon": "^1.18.4",
     "pg": "^7.4.3",
+    "supertest": "^3.3.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

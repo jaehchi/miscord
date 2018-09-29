@@ -41,9 +41,9 @@ export const createUserTable = async () => {
           id SERIAL,
           uuid VARCHAR(36) UNIQUE NOT NULL,
           username VARCHAR(16) UNIQUE NOT NULL,
-          email VARCHAR(60),
+          email VARCHAR(60) UNIQUE NOT NULL,
           CONSTRAINT users_pk
-            PRIMARY KEY(id)
+            PRIMARY KEY(uuid)
         )
       `
     );
@@ -74,7 +74,7 @@ export const createCredentialTable = async () => {
         (
           id SERIAL,
           user_id VARCHAR(36) NOT NULL,
-          hash VARCHAR(25) NOT NULL,
+          hash VARCHAR(120) NOT NULL,
           CONSTRAINT fk_user_id
             FOREIGN KEY(user_id) REFERENCES users(uuid)
         )

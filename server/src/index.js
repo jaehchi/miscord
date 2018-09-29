@@ -5,9 +5,9 @@ import App from './config/express';
 import db from './config/database';
 
 
-const app = App.express;
+export const app = App.express;
 
-const server = createServer(app);
+export const server = createServer(app);
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, err => {
@@ -16,5 +16,3 @@ server.listen(PORT, err => {
   }
   success(`Server is now listening on PORT: ${PORT}`);
 });
-
-export default server;
