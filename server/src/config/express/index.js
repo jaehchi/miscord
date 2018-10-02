@@ -1,16 +1,17 @@
 import express from 'express';
-import expressGraphQL from 'express-graphql';
+import graphHTTP from 'express-graphql';
 import compression from "compression";
 import cors from 'cors';
 import helmet from 'helmet';
 import { json, urlencoded } from 'body-parser';
 import { resolve } from 'path';
 
-// import schema from './schema.js'
+import schema from '../graphql/schema'
 import router from '../../routes';
 
 const middleware = [
   // compression(),
+  '/graphql',
   helmet(),
   cors({
     allowedHeaders: ['Content-type', 'Authorization'],
@@ -18,6 +19,11 @@ const middleware = [
   }),
   json(),
   urlencoded( { extended: true } ),
+  new graphHTTP( () => ({
+    schema,
+    pretty: true,
+    graphiql: true
+  })),
   express.static( resolve( __dirname, '../../../../client/public') ) 
 ];
 
